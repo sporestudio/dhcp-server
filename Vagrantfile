@@ -3,14 +3,14 @@
 # DHCP PROJECT - 1 server and 2 clients
 # Jorge Rodriguez Castillo
 
-$provider = "virtualbox"
 
 Vagrant.configure("2") do |config|
   config.vm.box = "debian/bookworm64"
-  config.vm.provider $provider
-
   config.vm.provision "shell",
-    path: "./scripts/provision-general.sh" 
+    path: "./scripts/provision-general.sh"
+  config.vm.provider :virtualbox do |vb|
+        vb.memory = 256
+        vb.cpus = 1
 
   config.vm.define "client1" do |c1|
     c1.vm.network "private_network",
@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "server" do |sr|
     sr.vm.provision "shell", 
-      path: "./scripts/install-dhcp.sh",
+      path: "./scripts/install-dhcp.sh"
       path: "./scripts/provision-dhcp.sh" 
     sr.vm.network "private_network", type: "static", ip: "192.168.56.10"
     sr.vm.network "private_network", type: "static", ip: "192.168.57.10",
