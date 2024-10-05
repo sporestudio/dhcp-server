@@ -1,6 +1,6 @@
-## DHCP SERVER
+# DHCP SERVER
 
-## Description
+## :snowflake: Description
 
 Deployment of a DHCP server with two clients, which are on an internal network and receive IP addresses from the DHCP server.
 
@@ -43,7 +43,7 @@ classDiagram
     internal_network --* Client2 : (MAC address based)
 ```
 
-## Configuration
+## :snowflake: Configuration
 
 ### Provisioning
 The provisoning will be done using the scripts localted in `scripts/` directory. There will be a general provision, to update repositories and packages, and a specific one for the server, where we will install the dhcp service and deploy our server configuration files.
@@ -62,6 +62,19 @@ The provisoning will be done using the scripts localted in `scripts/` directory.
     - It will have a lease time of 1 hour
     - Client 2 DNS server will be 1.1.1.1.1.
 
+## :wrench: Setup 
+In this project we have the makefile file, which when executed will perform the relevant steps to perform the deploy for us.
+
+- Using Makefile:
+    ```bash
+    make
+    ```
+- Without Makefile:
+    ```bash
+    vagrant up && vagrant provision
+    ```
+
+## :snowflake: Testing
 > [!WARNING]
 > This repository is under development, some functions may not work.
 
