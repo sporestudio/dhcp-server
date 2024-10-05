@@ -50,7 +50,7 @@ The provisoning will be done using the scripts localted in `scripts/` directory.
 
 ### Directives
 - DHCP Server:
-    - La primera tarjeta estará en la red privada solo-anfitrión 192.168.56.0/24 con la IP 192.168.56.10. La segunda tarjeta se configurará en una red interna 192.168.57.0/24 con IP 192.168.57.10.
+    - The first card will be on the private host-only network 192.168.56.0/24 with IP 192.168.56.10. The second card will be configured on an internal network 192.168.57.0/24 with IP 192.168.57.10.
     - The first card will have an Internet connection so we can download the packages to configure the DHCP server.
     configure the DHCP server. The second one will be isolated from the rest of the equipment and we will be able to send the DHCP messages.
     DHCP protocol messages.
