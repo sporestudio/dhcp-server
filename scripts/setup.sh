@@ -8,7 +8,7 @@ machine_name=$1
 # DHCP server function
 function setup_dhcp() {
   echo -e "Installing DHCP server in $machine_name..."
-  apt-get install isc-dhcp-server
+  apt-get install -y isc-dhcp-server
 
   # Providing files
   cp -v /vagrant/dhcp-config/dhcpd.conf /etc/dhcp/dhcpd.conf
