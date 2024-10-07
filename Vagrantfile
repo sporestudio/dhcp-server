@@ -11,6 +11,16 @@ Vagrant.configure("2") do |config|
         vb.cpus = 1
   end
 
+  config.vm.define "server" do |sr|
+    sr.vm.network "private_network", type: "static", ip: "192.168.56.10"
+    sr.vm.network "private_network", type: "static", ip: "192.168.57.10",
+      virtualbox__intnet: true
+
+    sr.vm.provision "shell",
+      path: "scripts/setup.sh",
+      args: ["server"]
+  end
+
   config.vm.define "client1" do |c1|
     c1.vm.hostname = "client1"
     c1.vm.network "private_network",
@@ -33,15 +43,5 @@ Vagrant.configure("2") do |config|
     c2.vm.provision "shell",
       path: "scripts/setup.sh",
       args: ["client2"]
-  end
-
-  config.vm.define "server" do |sr|
-    sr.vm.network "private_network", type: "static", ip: "192.168.56.10"
-    sr.vm.network "private_network", type: "static", ip: "192.168.57.10",
-      virtualbox__intnet: true
-
-    sr.vm.provision "shell",
-      path: "scripts/setup.sh",
-      args: ["server"]
   end
 end
