@@ -75,6 +75,27 @@ In this project we have the makefile file, which when executed will perform the 
     ```
 
 ## :snowflake: Testing
-> [!WARNING]
-> This repository is under development, some functions may not work.
+- To check that our DHCP server is working properly we can check the messages exchanged by the DHCP server `/var/log/syslog`.
+
+<div align="center">
+    <img src=".assets/images/syslogs.png" alt="syslog-messages"/>
+</div>
+
+- We can also check the list of grants that the server provides in `/var/lib/dhcp/dhcpd.leases`.
+
+<div align="center">
+    <img src=".assets/images/leases.png" alt="leases-messages"/>
+</div>
+
+- Another check we can perform is to check the status of the service with the command:
+     
+    ```bash
+    sudo systemctl status isc-dhcp-server.service
+    ```
+
+<div align="center">
+    <img src=".assets/images/status-dhcp.png" alt="status-dhcp"/>
+</div>
+
+
 
