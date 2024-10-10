@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-## This script update the repositories and
+## This script updates the repositories and
 ## provides the server with its config files
 
 machine_name=$1
