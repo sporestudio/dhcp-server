@@ -15,33 +15,11 @@ Deployment of a DHCP server with two clients, which are on an internal network a
 | client 2       |   192.168.57.4 based on MAC    |
 
 
-```mermaid
-classDiagram
-    class private_network {
-        192.168.57.10
-    }
+<br>
 
-    class Server {
-        <<DHCP>>
-    }
-
-    class internal_network {
-        192.168.57.10
-    }
-
-    class Client1 {
-        DHCP
-    }
-
-    class Client2 {
-        192.168.57.4
-    }
-
-    private_network <--> Server
-    Server <--> internal_network
-    internal_network --> Client1 
-    internal_network --* Client2 : (MAC address based)
-```
+<div align="center">
+    <img src=".assets/images/netdiag-dhcp.png" alt="dhcp-net"/>
+</div>
 
 ## :snowflake: Configuration
 
