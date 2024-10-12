@@ -37,7 +37,7 @@ The provisoning will be done using the scripts localted in `scripts/` directory.
     - They will be part of the internal network which is located at 192.168.57.0/24.
 - Client 2 directives:
     - The DHCP server will always assign the ip address 192.168.57.4.
-    - It will have a lease time of 1 hour
+    - It will have a lease time of 1 hour.
     - Client 2 DNS server will be 1.1.1.1.1.
 
 ## :wrench: Setup 
@@ -49,7 +49,7 @@ In this project we have the makefile file, which when executed will perform the 
     ```
 - Without Makefile:
     ```bash
-    vagrant up && vagrant provision
+    vagrant up
     ```
 
 ## :snowflake: Testing
